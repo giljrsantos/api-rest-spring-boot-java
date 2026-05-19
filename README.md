@@ -1,4 +1,4 @@
 # Spring Boot API Rest Java
 
-## Descripción
-Este proyecto es una API REST desarrollada con Spring Boot en Java. Proporciona una interfaz para gestionar recursos a través de operaciones CRUD (Crear, Leer, Actualizar, Eliminar). La API está diseñada para ser fácil de usar y se puede integrar con otras aplicaciones o servicios.  
+## Descrição
+Este projeto é uma API REST desenvolvida com Spring Boot em Java. Ela fornece uma interface para gerenciar recursos por meio de operações CRUD (Criar, Ler, Atualizar, Excluir). A API foi projetada para ser fácil de usar e pode ser integrada com outras aplicações ou serviços.
