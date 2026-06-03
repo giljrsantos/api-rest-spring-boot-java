@@ -16,6 +16,7 @@ public class PersonServices {
     private Logger logger = Logger.getLogger(PersonServices.class.getName());
 
     public List<Person> findAll(){
+        logger.info("Finding All people!");
         List<Person> persons = new ArrayList<Person>();
 
         for(int i = 0; i < 8; i++){
@@ -37,6 +38,11 @@ public class PersonServices {
         person.setGender("Male");
         person.setAddress("Iúna - Esprito Santo - Brasil");
 
+        return person;
+    }
+
+    public Person create(Person person){
+        logger.info("Creating one Person!");
         return person;
     }
 

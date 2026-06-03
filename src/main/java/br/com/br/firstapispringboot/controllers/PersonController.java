@@ -5,14 +5,9 @@ import br.com.br.firstapispringboot.PersonServices;
 import br.com.br.firstapispringboot.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
-import java.util.logging.Logger;
+import java.util.List;
 
 @RestController
 @RequestMapping("/person")
@@ -34,20 +29,19 @@ public class PersonController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Person findById(@PathVariable("id") String id){
+
         return service.findById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Person create(@RequestBody Person person){
+        return service.create(person);
     }
 
 
 
-    //private Logger logger = Logger.getLogger(PersonController.class.getName());
 
-     //public PersonController(PersonServices service) {
-       // this.service = service;
-    //}
-
-     // http://localhost:8080/person
-     // return a list of people
-     // create a new person
-     // update a person
-     // delete a person
 }
