@@ -1,4 +1,4 @@
-package br.com.br.firstapispringboot;
+package br.com.br.firstapispringboot.services;
 
 import br.com.br.firstapispringboot.model.Person;
 import org.springframework.stereotype.Service;

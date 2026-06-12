@@ -1,7 +1,7 @@
 package br.com.br.firstapispringboot.controllers;
 
 
-import br.com.br.firstapispringboot.PersonServices;
+import br.com.br.firstapispringboot.services.PersonServices;
 import br.com.br.firstapispringboot.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
