@@ -14,6 +14,44 @@ A API foi projetada para ser fácil de usar e pode ser integrada com outras apli
 - Spring Boot 3.4.0
 - Spring Boot DevTools
 - Spring Web
+- Spring Data JPA
+- MySQL Connector/J
+
+## Configuração de Banco de Dados
+
+### MySQL Datasource
+
+A aplicação foi configurada para utilizar o banco de dados MySQL com as seguintes características:
+
+#### Dependências Adicionadas ao pom.xml
+- **Spring Data JPA** (`spring-boot-starter-data-jpa`): Fornece support para ORM com Hibernate
+- **MySQL Connector/J** (`mysql-connector-j`): Driver JDBC para conectar ao MySQL
+
+#### Configuração do application.yml
+O arquivo `application.yml` foi configurado com os seguintes parâmetros:
+
+```yaml
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.driver
+    url: jdbc:mysql://localhost:3386/rest_with_spring_boot_java?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+```
+
+- **Driver**: Utiliza o driver MySQL 8.0 (`com.mysql.cj.jdbc.driver`)
+- **URL**: Conecta ao banco de dados `rest_with_spring_boot_java` na porta 3386 do localhost
+- **Hibernate DDL**: Configurado para `update`, o que permite que as tabelas sejam criadas/atualizadas automaticamente baseado nas entidades
+- **Dialect**: MySQL8Dialect para máxima compatibilidade com MySQL 8.0+
+
+> **Nota**: Certifique-se de que o servidor MySQL está rodando na porta 3386 e que o banco de dados `rest_with_spring_boot_java` existe no servidor.
 
 ## Funcionalidades Implementadas
 
