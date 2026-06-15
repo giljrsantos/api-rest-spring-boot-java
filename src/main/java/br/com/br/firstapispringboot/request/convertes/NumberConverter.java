@@ -1,11 +1,11 @@
 package br.com.br.firstapispringboot.request.convertes;
 
-import br.com.br.firstapispringboot.exception.UnsupportedMathOperationException;
+import br.com.br.firstapispringboot.exception.ResouceNotFoundException;
 
 public class NumberConverter {
 
     public static Double convertToDouble(String strNumber) throws IllegalArgumentException {
-        if(strNumber == null || strNumber.isEmpty()) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(strNumber == null || strNumber.isEmpty()) throw new ResouceNotFoundException("Please set a numeric value");
         String number = strNumber.replace(",", "."); // R$ 5,00 USD 5.0
         return Double.parseDouble((number));
     }

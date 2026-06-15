@@ -1,6 +1,8 @@
 package br.com.br.firstapispringboot.controllers;
 
-import br.com.br.firstapispringboot.exception.UnsupportedMathOperationException;
+
+
+import br.com.br.firstapispringboot.exception.ResouceNotFoundException;
 import br.com.br.firstapispringboot.math.SimpleMath;
 import br.com.br.firstapispringboot.request.convertes.NumberConverter;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +23,7 @@ public class MathController {
            @PathVariable("numberTwo") String numberTwo
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new ResouceNotFoundException("Please set a numeric value");
         return math.sum(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
     }
 
@@ -32,7 +34,7 @@ public class MathController {
            @PathVariable("numberTwo") String numberTwo
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new ResouceNotFoundException("Please set a numeric value");
         return math.subtraction(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
     }
     // request mapping from multiplication
@@ -42,7 +44,7 @@ public class MathController {
            @PathVariable("numberTwo") String numberTwo
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new ResouceNotFoundException("Please set a numeric value");
         return math.multiplication(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
     }
     // request mapping from multiplication
@@ -52,7 +54,7 @@ public class MathController {
            @PathVariable("numberTwo") String numberTwo
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new ResouceNotFoundException("Please set a numeric value");
         return math.division(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
     }
 
@@ -63,7 +65,7 @@ public class MathController {
            @PathVariable("numberTwo") String numberTwo
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) throw new ResouceNotFoundException("Please set a numeric value");
 
         return math.mean(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
     }
@@ -73,7 +75,7 @@ public class MathController {
            @PathVariable("number") String number
     )  throws Exception {
         // validate inputs: if any value is NOT numeric, throw IllegalArgumentException (kept by request)
-        if(!NumberConverter.isNumeric(number)) throw new UnsupportedMathOperationException("Please set a numeric value");
+        if(!NumberConverter.isNumeric(number)) throw new ResouceNotFoundException("Please set a numeric value");
 
         return math.squareRoot(NumberConverter.convertToDouble(number));
     }
