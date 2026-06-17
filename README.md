@@ -34,7 +34,7 @@ O arquivo `application.yml` foi configurado com os seguintes parâmetros:
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.driver
-    url: jdbc:mysql://localhost:3386/rest_with_spring_boot_java?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/rest_with_spring_boot_java?useTimezone=true&serverTimezone=UTC
     username: root
     password: ********
   jpa:
