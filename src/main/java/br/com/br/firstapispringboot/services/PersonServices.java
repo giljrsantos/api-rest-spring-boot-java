@@ -19,18 +19,13 @@ public class PersonServices {
     @Autowired
     PersonRepository repository;
 
-
     public List<Person> findAll(){
         logger.info("Finding All people!");
-
         return repository.findAll();
-
     }
-
 
     public Person findById(Long id){
         logger.info("Finding one Person!");
-
         return repository.findById(id).orElseThrow(() -> new RuntimeException("No records found for this ID!"));
     }
 
@@ -54,6 +49,5 @@ public class PersonServices {
         Person entity = repository.findById(id).orElseThrow(() -> new RuntimeException("Person not found"));
         repository.delete(entity);
     }
-
 
 }
