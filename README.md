@@ -90,6 +90,19 @@ A aplicação segue uma arquitetura em camadas:
 
 
 
+## Screenshots
+
+A seguir estão dois prints do projeto: um mostrando a camada de Service e outro mostrando a camada de Controller. As imagens estão na pasta `img`.
+
+- Service (exemplo de implementação/fluxo):
+
+  ![Service](img/short-service.png)
+
+- Controller (exemplo de endpoints):
+
+  ![Controller](img/short-controller.png)
+
+
 ## Conclusão
 Este projeto é uma base sólida para o desenvolvimento de uma API RESTful com Spring Boot em Java. Ele oferece funcionalidades essenciais para o gerenciamento de pessoas e pode ser facilmente expandido para incluir recursos adicionais conforme necessário. A estrutura modular facilita a manutenção e a escalabilidade da aplicação.
 
